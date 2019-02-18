@@ -77,7 +77,7 @@ public class PowerSet
     public static List<List<Integer>> powerSetImplementation2(int[] myArray) throws NullPointerException
     {
 
-        if (myArray == null) return null;
+        if (myArray == null) throw new NullPointerException();
 
             Arrays.sort(myArray);
 
@@ -123,11 +123,11 @@ public class PowerSet
      * is not initialized
      */
     // implementation 3
-        public static Set<Set<Integer>> powerSetImplementation3(int[] S) 
+        public static Set<Set<Integer>> powerSetImplementation3(int[] S) throws NullPointerException
         {
         	if(S == null) 
         	{
-        		return new HashSet<Set<Integer>>();
+        		throw new NullPointerException();
         	}
             List<Integer> arrayList = new ArrayList<Integer>();
             for (int index = 0; index < S.length; index++)
