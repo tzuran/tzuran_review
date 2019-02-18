@@ -10,25 +10,26 @@ import java.util.NoSuchElementException;
 	 * @author amehlhas, adalvi1
 	 *
 	 */
-	public final class Main {
+	public final class Main 
+	{
 		/**
 		 * All methods should have a Javadoc according to STYLE.
 		 * @param args command-line arguments
 		 * @throws Exception as per typical main specifications
 		 */
-		public static void main(final String[] args) throws Exception {
-
+		public static void main(final String[] args) throws Exception 
+		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String accStr;
 			String choice;
 
-			if (args.length == 0) {
+			if (args.length == 0) 
+			{
 				accStr = "5";
 				choice = "1";
-
 			}
-			else{
-
+			else
+			{
 				System.out.println("Enter your string of numbers or just one number:");
 				accStr = br.readLine();
 
@@ -39,26 +40,26 @@ import java.util.NoSuchElementException;
 						+ "0 (Power Set 1) \t 1 (Power Set  2) \t 2 (Power Set  3)\n");
 				System.out.println("Enter selected algorithm code :");
 				choice = br.readLine();
-
 			}
+			
 			PowerSetData data = new PowerSetData();
 
-			try {
-
+			try 
+			{
 				data.initializeArray(accStr);
-
 				data.runAlgo(Integer.valueOf(choice).intValue()+1);
-
-
-			 } catch (NoSuchElementException e) {
+			}
+			catch (NoSuchElementException e) 
+			{
 				 System.out.println("Not enough numbers.");
-		     } catch (NumberFormatException e) {
+		    }
+			catch (NumberFormatException e) 
+			{
 		    	 System.out.println("Please only use integer values. ");
-		     } catch (NegativeArraySizeException e) {
+		    } 
+			catch (NegativeArraySizeException e) 
+			{
 		    	 System.out.println("Negative Array Size.");
-		     }
-
-
+		    }
 		}
-
 	}
